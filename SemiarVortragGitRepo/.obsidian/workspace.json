@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "c604c991e0908265",
+        "id": "c6f139fe94631ce3",
         "type": "tabs",
         "children": [
           {
-            "id": "fb62cbe3c3c3cfe2",
+            "id": "a34a74a4aa55779e",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Seminarvortrag PageRank.md",
+                "file": "Tobis Pagerank Ausarbeitung.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Seminarvortrag PageRank.md",
+                "file": "Tobis Pagerank Ausarbeitung.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Seminarvortrag PageRank.md",
+                "file": "Tobis Pagerank Ausarbeitung.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Seminarvortrag PageRank.md"
+                "file": "Tobis Pagerank Ausarbeitung.md"
               }
             }
           }
@@ -146,8 +146,21 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "fb62cbe3c3c3cfe2",
+  "active": "dfcfdaf14a83d2f0",
   "lastOpenFiles": [
-    "Seminarvortrag PageRank.md"
+    "Seminarvortrag PageRank.md",
+    "Tobis Pagerank Ausarbeitung.md",
+    "Ausschnitt aus Langville und Meyer, Google’s Pagerank and Beyond The Science of Search Engine Rankings.pdf.md",
+    "SeminarVortrag/Screenshots/Pasted image 20231113143445.png",
+    "SeminarVortrag/Screenshots/Pasted image 20231113134135.png",
+    "SeminarVortrag/Screenshots/Pasted image 20231113155033.png",
+    "SeminarVortrag/Screenshots/Pasted image 20231113154827.png",
+    "SeminarVortrag/Screenshots/Pasted image 20231113154605.png",
+    "SeminarVortrag/Screenshots/Pasted image 20231113144509.png",
+    "SeminarVortrag/Screenshots/Pasted image 20231113144119.png",
+    "SeminarVortrag/Screenshots/Pasted image 20231113143027.png",
+    "SeminarVortrag/Screenshots/Pasted image 20231113113955.png.md",
+    "SeminarVortrag/Screenshots",
+    "SeminarVortrag"
   ]
 }
