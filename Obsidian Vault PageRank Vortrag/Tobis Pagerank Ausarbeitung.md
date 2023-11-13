@@ -39,7 +39,6 @@
 ---
 
 # Pagerank
-
 ## Thema:
 - Definition und Herleitung der Google-Matrix 
 - Zusammenhang zu Markovketten und linearer Algebra
@@ -48,10 +47,6 @@
 	- Random Walks auf Graphen
 	- stationäre Wahrscheinlkeiten
 	- Markovketten
-
-## Langville und Meyer, “Google’s Pagerank and Beyond: The Science of Search Engine Rankings”
-
-![[Ausschnitt aus Langville und Meyer, Google’s Pagerank and Beyond The Science of Search Engine Rankings.pdf]]
 
 ## Inhalt Kapitel 14 - The Mathematics of Google's PageRank
 - 4.1 THE ORIGINAL SUMMATION FORMULA FOR PAGERANK
@@ -106,25 +101,49 @@
 						- Konvergiert also nie!
 					- Negative Vektoren auch ein Problem
 						- Wieso eigentlich?
-- 4.4 A LITTLE MARKOV CHAIN THEORY
+- 4.4 EIN WENIG MARKOV-KETTEN-THEORIE
 	- Zur Lösung der Probleme brauchen wir Markov-Theorie
 	- In den Beobachtungen 3 und 4 haben wir festgestellt, dass Gleichung (4.2.1) der Potenzmethode ähnelt, die auf eine Markov-Kette mit der Übergangswahrscheinlichkeitsmatrix H angewendet wird. 
 		- Diese Beobachtungen sind sehr hilfreich, denn die Theorie der Markov-Ketten ist gut entwickelt,2 und sehr gut auf das PageRank-Problem anwendbar.
 	- Damit können wir Änderungen vornehmen, die zur Konvergenz führen
 		- Insbesondere wissen wir, dass die Potenzmethode, die auf eine Markov-Matrix P angewandt wird, für jeden beliebigen Startvektor zu einem einzigen positiven Vektor konvergiert, der als stationärer Vektor bezeichnet wird, solange P stochastisch, irreduzibel und aperiodisch ist.
 		- Daher können die PageRank-Konvergenzprobleme, die durch Senken und Zyklen verursacht werden, überwunden werden, wenn H leicht modifiziert wird, so dass es eine Markov-Matrix mit diesen gewünschten Eigenschaften ist.
-- 4.5 EARLY ADJUSTMENTS TO THE BASIC MODEL
+- 4.5 FRÜHE ANPASSUNGEN DES GRUNDMODELLS
+	- Tatsächlich haben Brin und Page genau das getan. Sie beschreiben ihre Anpassungen am grundlegenden PageRank-Modell in ihren Originalarbeiten von 1998. Interessant ist, dass in keinem ihrer Papiere der Begriff "Markov-Kette" vorkommt, nicht ein einziges Mal. Auch wenn sie sich dessen 1998 nicht bewusst waren, wissen sie jetzt sicherlich, dass ihr ursprüngliches Modell mit Markov-Ketten in Verbindung steht, da Markov-Ketten-Forscher begeistert und stetig auf den PageRank-Zug aufgesprungen sind und eifrig an dem arbeiten, was manche die große Anwendung von Markov-Ketten nennen.
 	- Random Surfer
-		- this random surfer encounters some problems. He gets caught whenever he enters a dangling node
-			- To fix this, Brin and Page define their first adjustment, which we call the stochasticity adjustmen
-		- However, it alone cannot guarantee the convergence results desired
-			- Brin and Page needed another adjustment–this time a primitivity adjustment
-			- With this adjustment, the resulting matrix is stochastic and primitive
-		- The random surfer argument for the primitivity adjustment goes like this. While it is true that surfers follow the hyperlink structure of the Web, at times they get bored and abandon the hyperlink method of surfing by entering a new destination in the browser’s URL line. When this happens, the random surfer, like a Star Trek character, “teleports” to the new page, where he begins hyperlink surfing again, until the next teleportation, and so on. To model this activity mathematically, Brin and Page invented a new matrix G
-	- Consequences of the primitivity adjustment
-	- Seite 38 Notationsübersicht praktisch für Vortrag
-	- Googles endgültige PageRank Formel: 4.5.1
-- 4.6 COMPUTATION OF THE PAGERANK VECTOR
+		- Stellen Sie sich einen Websurfer vor, der wahllos der Hyperlinkstruktur des Webs folgt. Das heißt, wenn er auf eine Seite mit mehreren Links stößt, wählt er einen zufällig aus, verlinkt zu dieser neuen Seite und setzt diesen Prozess der zufälligen Entscheidung unbegrenzt fort. Langfristig ist der Anteil der Zeit, die der zufällige Surfer auf einer bestimmten Seite verbringt, ein Maß für die relative Bedeutung dieser Seite. Wenn er einen großen Teil seiner Zeit auf einer bestimmten Seite verbringt, dann muss er beim zufälligen Verfolgen der Hyperlink-Struktur des Webs immer wieder auf diese Seite zurückgekehrt sein. Seiten, die er oft besucht, müssen wichtig sein, denn auf sie müssen andere wichtige Seiten verweisen.
+		- Leider stößt dieser zufällige Surfer auf einige Probleme. Er bleibt immer dann hängen, wenn er einen hängenden Knotenpunkt betritt
+			- Und im Web gibt es jede Menge solcher Knoten, z. B. PDF-Dateien, Bilddateien, Datentabellen usw.
+		- Zur Lösung dieses Problems war die erste Anpassung die Stochastizitätsanpassung
+			- heißt so, weil die 0^T Zeilen von H durch 1/n e^T ersetzt werden, wodurch H stochastisch wird. Infolgedessen kann der zufällige Surfer, nachdem er einen Dangling-Knoten eingegeben hat, nun einen Hyperlink zu einer beliebigen Seite setzen.
+				- Diese stochastische Matrix nennt sich S
+				- ![[Pasted image 20231113163139.png]]
+				- Die mathematische Formulierung dieses Stochastik-Fixes zeigt, dass S aus einer Rang-1-Aktualisierung von H entsteht, d. h. S = H + a(1/n e^T ), wobei ai = 1 ist, wenn die Seite i ein "Dangling Node" ist, und sonst 0.
+				- Der binäre Vektor a wird als "Dangling Node"-Vektor bezeichnet. S ist eine Kombination aus der rohen ursprünglichen Hyperlink-Matrix H und einer Rang-Eins-Matrix 1/n ae^T.
+				- Diese Anpassung garantiert, dass S stochastisch ist und somit die Übergangswahrscheinlichkeitsmatrix für eine Markov-Kette darstellt.
+		- Allerdings löst allerdings noch nicht das Konvergenzproblem (Das ein eindeutiges positives Ergebnis π^T existiert und die Gleichung 4.2.1 schnell dahin konvergiert)
+			- Deswegen wurde außerdem die Primitivitätsanpassung vorgenommen. 
+				- Eine primitive Matrix ist sowohl irreduzibel als auch aperiodisch. Der stationäre Vektor der Kette (in diesem Fall der PageRank-Vektor) existiert also,  ist eindeutig und kann durch eine einfache Potenziteration gefunden werden.
+				- Brin und Page verwenden erneut den Random Surfer, um diese Markov-Eigenschaften zu beschreiben.
+					- Das Argument der Zufallssurfer für die Primitivitätsanpassung lautet folgendermaßen: 
+						- Es stimmt zwar, dass Surfer der Hyperlink-Struktur des Webs folgen, aber manchmal wird ihnen langweilig und sie verlassen die Hyperlink-Methode des Surfens, indem sie ein neues Ziel in die URL-Zeile des Browsers eingeben. 
+					- Um diesen Vorgang mathematisch zu modellieren, erfanden Brin und Page eine neue Matrix G (Google-Matrix), die wie folgt lautet:
+						- ![[Pasted image 20231113171056.png]]
+							- α ist ein Skalar zwischen 0 und 1
+		- Die Primitivitätsanpassung hat mehrere Konsequenzen:
+			- G ist stochastisch. Es ist die konvexe Kombination der beiden stochastischen Matrizen S und E = 1/n ee^T .
+				- Was bedeutet das?
+			- G ist irreduzibel. Jede Seite ist direkt mit jeder anderen Seite verbunden, so dass die Irreduzibilität trivialerweise erzwungen ist.
+			- G ist aperiodisch. Die Selbstschleifen (G (unten ü) > 0 für alle i) erzeugen Aperiodizität.
+				- Erklären
+			- G ist primitiv, weil G^k > 0 für einige k. (Tatsächlich gilt dies für k = 1.) Dies impliziert, dass ein eindeutiges positives πT existiert, und die auf G angewandte Potenzmethode konvergiert garantiert zu diesem Vektor.
+			- G ist komplett dicht, was aus rechnerischer Sicht sehr schlecht ist. Glücklicherweise kann G als eine Rang-Eins-Aktualisierung der sehr spärlichen Hyperlink-Matrix H geschrieben werden.
+			- G ist insofern künstlich, als die rohe Hyperlink-Matrix H zweimal verändert wurde, um die gewünschten Konvergenzeigenschaften zu erreichen. Einen stationären Vektor (also einen PageRank-Vektor) gibt es für H nicht, also haben Brin und Page kreativ gemogelt, um ihr gewünschtes Ergebnis zu erreichen. Für das zweifach modifizierte G gibt es einen eindeutigen PageRank-Vektor, und wie sich herausstellt, ist dieser Vektor bemerkenswert gut darin, Webseiten einen globalen Bedeutungswert zu geben.
+	- Begriffsübersicht:
+		- ![[Pasted image 20231113171708.png]]
+		- Noch übersetzen!
+	- ![[Pasted image 20231113171738.png]]
+- 4.6BERECHNUNG DES PAGERANK-VEKTORS
 	- Mit Eigenvektore-Methode oder linearen homogenen Systemen
 		- Matlab’s eig command to solve for πT , then normalized the result (by dividing the vector by its sum) to get the PageRank vector. However, for a web-sized matrix like Google’s, this will not do. Other more advanced and computationally efficient methods must be used. Of course, πT is the stationary vector of a Markov chain with transition matrix G
 		- However, the specific features of the PageRank matrix G make one numerical method, the power method, the clear favorite
