@@ -11,11 +11,36 @@
             "id": "a34a74a4aa55779e",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "pdf",
               "state": {
-                "file": "Tobis Pagerank Ausarbeitung.md",
-                "mode": "source",
-                "source": false
+                "file": "Langville und Meyer, Google’s Pagerank and Beyond The Science of Search Engine Rankings.pdf"
+              }
+            }
+          },
+          {
+            "id": "1916589aa94ebfb2",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "Ausschnitt aus Langville und Meyer, Google’s Pagerank and Beyond The Science of Search Engine Rankings.pdf"
+              }
+            }
+          }
+        ],
+        "currentTab": 1
+      },
+      {
+        "id": "40d3483af3a77da0",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "105d2fa20a014ea0",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "Ausschnitt aus Langville und Meyer, Google’s Pagerank and Beyond The Science of Search Engine Rankings.pdf"
               }
             }
           }
@@ -85,7 +110,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Tobis Pagerank Ausarbeitung.md",
+                "file": "Ausschnitt aus Langville und Meyer, Google’s Pagerank and Beyond The Science of Search Engine Rankings.pdf",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +127,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Tobis Pagerank Ausarbeitung.md",
+                "file": "Ausschnitt aus Langville und Meyer, Google’s Pagerank and Beyond The Science of Search Engine Rankings.pdf",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +150,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Tobis Pagerank Ausarbeitung.md"
+                "file": "Ausschnitt aus Langville und Meyer, Google’s Pagerank and Beyond The Science of Search Engine Rankings.pdf"
               }
             }
           }
@@ -146,22 +171,24 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "a34a74a4aa55779e",
+  "active": "1916589aa94ebfb2",
   "lastOpenFiles": [
+    "Langville und Meyer, Google’s Pagerank and Beyond The Science of Search Engine Rankings.pdf",
+    "Ausschnitt aus Langville und Meyer, Google’s Pagerank and Beyond The Science of Search Engine Rankings.pdf",
+    "Seminarvortrag PageRank.md",
+    "Tobis Pagerank Ausarbeitung.md",
+    "Ausschnitt aus Langville und Meyer, Google’s Pagerank and Beyond The Science of Search Engine Rankings.pdf.md",
+    "Übersetzter Ausschnitt aus Langville und Meyer, Google’s Pagerank and Beyond The Science of Search Engine Rankings-de.pdf",
     "SeminarVortrag/Screenshots/Pasted image 20231113171738.png",
     "SeminarVortrag/Screenshots/Pasted image 20231113171708.png",
     "SeminarVortrag/Screenshots/Pasted image 20231113171056.png",
     "SeminarVortrag/Screenshots/Pasted image 20231113163139.png",
     "SeminarVortrag/Screenshots/Pasted image 20231113113955.png",
-    "Ausschnitt aus Langville und Meyer, Google’s Pagerank and Beyond The Science of Search Engine Rankings.pdf.md",
     "Pasted image 20231113171708.png",
     "Pasted image 20231113171738.png",
-    "Seminarvortrag PageRank.md",
-    "Tobis Pagerank Ausarbeitung.md",
     "Pasted image 20231113171056.png",
     "Pasted image 20231113163139.png",
     "SeminarVortrag/Screenshots/Pasted image 20231113143445.png",
-    "SeminarVortrag/Screenshots/Pasted image 20231113134135.png",
     "SeminarVortrag/Screenshots/Pasted image 20231113113955.png.md",
     "SeminarVortrag/Screenshots",
     "SeminarVortrag"
