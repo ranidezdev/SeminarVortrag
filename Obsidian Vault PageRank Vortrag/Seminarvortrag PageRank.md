@@ -59,4 +59,11 @@ $${\pi}^{(k+1)T}={\pi}^{(k)T}H$$
 - Jedoch kam es hier zu verschiedenen Problemen, wie
 	- sogenannten "rank sinks", welche mit jeder Iteration einen höheren PageRank erlangen und quasi nichts "abgeben"
 		- Sprich wenn keine ausgehenden Verlinkungen von einem Knoten ausgehen, sondern nur eingehende Verlinkungen wird der PageRank an diesem Knoten immer größer
-	- Ein weiteres Problem
+	- Ein weiteres Problem ist wenn einzelne Knoten besonders viel PageRank ansammeln, dass andere Knoten am Ende einen PageRank von 0 haben
+		- Im Idealfall sollte der PageRank-Vektor aber immer positiv sein, also keine Nullwerte
+	- Ein weiteres und letztes Problem sind Zyklen, also wenn eine Knoten nur auf einen anderen zeigt und genauso der andere Knoten zurück, dies hat zur Folge dass die Werte niemals konvergieren
+
+
+#### 4.4 Markow-Ketten
+
+- In den Kapitel 4.2 erwähnten Beobachtungen haben wir festgestellt, dass die Gleichung einer Potenzfunktion ähnelt, die auf eine Markow-Kette mit Übergangsmatrix H angewendet wird
