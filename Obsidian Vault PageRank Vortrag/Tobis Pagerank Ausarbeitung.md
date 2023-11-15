@@ -144,27 +144,67 @@
 		- Noch übersetzen!
 	- ![[Pasted image 20231113171738.png]]
 - 4.6BERECHNUNG DES PAGERANK-VEKTORS
-	- Mit Eigenvektore-Methode oder linearen homogenen Systemen
-		- Matlab’s eig command to solve for πT , then normalized the result (by dividing the vector by its sum) to get the PageRank vector. However, for a web-sized matrix like Google’s, this will not do. Other more advanced and computationally efficient methods must be used. Of course, πT is the stationary vector of a Markov chain with transition matrix G
-		- However, the specific features of the PageRank matrix G make one numerical method, the power method, the clear favorite
-			- The power method is one of the oldest and simplest iterative methods for finding the dominant eigenvalue and eigenvector of a matrix. Therefore, it can be used to find the stationary vector of a Markov chain. (The stationary vector is simply the dominant left-hand eigenvector of the Markov matrix.)
-			- However, the power method is known for its tortoise-like speed. Of the available iterative methods (Gauss-Seidel, Jacobi, restarted GMRES, BICGSTAB, etc.), the power method is generally the slowest. So why did Brin and Page choose a method known for its sluggishness?
-				- First, the power method is simple and therefore easy to implement and also is storage-friendly:
-					- The vector-matrix multiplications (π(k)T H) are executed on the extremely sparse H, and S and G are never formed or stored, only their rank-one components, a and e, are needed. Recall that each vector-matrix multiplication is O(n) since H has about 10 nonzeros per row. This is probably the main reason for Brin and Page’s use of the power method in 1998
-			- But why is the Power method still the predominant method in PageRank research papers today, and why have most improvements been novel modifications to the PageRank power method, rather than experiments with other methods?
-				- The power method, like many other iterative methods, is matrix-free, which is a term that refers to the storage and handling of the coefficient matrix
-					- No manipulation of the matrix is done
-				- Modifying and storing elements of the Google matrix is not feasible. Even though H is very sparse, its enormous size and lack of structure preclude the use of direct methods.
-				- The last reason for using the power method to compute the PageRank vector con- cerns the number of iterations it requires. Brin and Page reported in their 1998 papers, and others have confirmed, that only 50-100 power iterations are needed before the iterates have converged, giving a satisfactory approximation to the exact PageRank vector.
-			- The next logical question is: why does the power method applied to G require only about 50 iterations to converge?
-				- The answer comes from the theory of Markov chains. In general, the asymptotic rate of convergence of the power method
-	- ASIDE: Search Engine Optimization
-	- ASIDE: How Do Search Engines Make Money?
+	- Das PageRank-Problem kann auf zwei Arten erklärt werden:
+		- 1.  Lösen Sie das folgende Eigenvektorproblem für π^T .
+			- ![[Pasted image 20231115195118.png]]
+			- Im ersten System besteht das Ziel darin, den normalisierten dominanten linken Eigenvektor von G zu finden, der dem dominanten Eigenwert λ1 = 1 entspricht.
+		- 2. Lösen Sie das folgende lineare homogene System für π^T .
+			- ![[Pasted image 20231115195203.png]]
+			- m zweiten System besteht das Ziel darin, den normalisierten linken Nullvektor von I - G zu finden.
+	- Für beide Systeme gilt die Normalisierungsgleichung πT e = 1, die sicherstellt, dass πT ein Wahrscheinlichkeitsvektor ist
+	- An sich es dadurch zu berechnen, dass man den Vektor durch seine Summe dividiert, aber für riesig große Webmatrizen nicht ausreichend.
+		- Dafür müssen fortschrittlichere und rechenintensivere Methoden verwendet werden
+	- Natürlich ist π^T der stationäre Vektor einer Markov-Kette mit der Übergangsmatrix G, und es wurde viel über die Berechnung des stationären Vektors für eine allgemeine Markov-Kette geforscht.
+	- Dies machte eine numerische Methode, genauer die Potenz-Methode, zur besseren Wahl und wurde deshalb für die Google Matrix zum klaren Favoriten
+	- Wieso ist die Potenzmethode in diesem Fall besser fragt ihr euch?
+		- Ihr habt mir das vermutlich alle direkt geglaubt, aber die Potenzmethode ist eigentlich für ihre Langsamkeit beim finden von stationären Vektoren im Vergleich zu Gauß-Seidel, Jacobi, etc. bekannt.
+		- Also was hat Brin und Page damals dazu gebracht, trotzdem diese Methode zu wählen?
+			- Erstens die Einfachheit der Methode. Die Implementierung und Programmierung ist sehr unkompliziert.
+			- Doch ein weitaus größerer Vorteil für ihr Vorhaben ist, dass sich die Matrix G durch die angewandte Potenzmethode (Gleichung (4.5.1)) tatsächlich in Form des sehr dünn besetzten H ausgedrückt werden.
+			  ![[Pasted image 20231115202114.png]]
+			-  Die Vektor-Matrix-Multiplikationen (π^((k)T) H) werden mit dem extrem dünn besetzten H durchgeführt, und S und G werden nie gebildet oder gespeichert, sondern nur ihre Rang- Eins-Komponenten, a und e, werden benötigt.
+			- Es sei daran erinnert, dass jede Vektor- Matrix-Multiplikation O(n) ist, da H etwa 10 Nullen pro Zeile hat. Dies ist wahrscheinlich der Hauptgrund dafür, dass Brin und Page im Jahr 1998 die Potenzmethode verwendeten.
+		- Aber warum ist die Power-Methode auch heute noch die vorherrschende Methode in PageRank-Forschungsarbeiten, und warum waren die meisten Verbesserungen neuartige Modifikationen der PageRank-Power-Methode und nicht Experimente mit anderen Methoden?
+			- Weitere Vorteile des Algorithmus:
+				- Die Potenzmethode ist matrixfrei
+					- wie viele andere iterative Methoden, ist sie matrixfrei, ein Begriff, der sich auf die Speicherung und Handhabung der Koeffizientenmatrix bezieht. Bei matrixfreien Methoden wird auf die Koeffizientenmatrix nur über die Vektor-Matrix- Multiplikationsroutine zugegriffen. Es findet keine Manipulation der Matrix statt. 
+					- Dies steht im Gegensatz zu direkten Methoden, bei denen Elemente der Matrix bei jedem Schritt manipuliert werden. 
+					- Ändern und Speichern von Elementen der Google Matrix ist nicht machbar.
+					- Auch wenn H sehr spärlich ist, schließen seine enorme Größe und sein Mangel an Struktur die Verwendung direkter Methoden aus. Stattdessen werden matrixfreie Methoden, wie die Klasse der iterativen Methoden, bevorzugt.
+				- Die Potenzmethode ist auch speicherfreundlich
+					- Neben der dünnbesetzten Matrix H und dem Knotenvektor a muss nur ein Vektor, der aktuelle Iterus π^((k)T) , gespeichert werden. Dieser Vektor ist vollständig dicht, d. h. es müssen n reelle Zahlen gespeichert werden
+					- Bei Google ist n = 8,1 Milliarden, so dass man die sparsame Mentalität des Unternehmens verstehen kann, wenn es um die Speicherung geht
+					- Andere iterative Methoden, wie GMRES oder BICGSTAB, sind zwar schneller, erfordern aber die Speicherung mehrerer Vektoren. Ein neu gestartetes GMRES(10) erfordert beispielsweise bei jeder Iteration die Speicherung von 10 Vektoren der Länge n, was dem Speicherbedarf der gesamten H-Matrix entspricht, da nnz(H) ≈ 10n
+				- Der letzte Grund für die Verwendung der Power-Methode zur Berechnung des PageRank-Vektors und den finde ich persönlich am interessantesten, ist die Anzahl der erforderlichen Iterationen. 
+					- Brin und Page berichteten in ihren Veröffentlichungen von 1998, und andere haben dies bestätigt, dass nur 50-100 Power-Iterationen erforderlich sind, bevor die Iterate konvergieren und eine zufriedenstellende Annäherung an den exakten PageRank-Vektor liefern.
+					- Es sei daran erinnert, dass jede Iteration der Potenzmethode O(n) Aufwand erfordert, weil H so spärlich ist. 
+					- Daher ist es schwer, eine Methode zu finden, die 50 O(n)-Power-Iterationen übertreffen kann. Algorithmen, deren Laufzeit und Rechenaufwand linear (oder sublinear) mit der Problemgröße sind, sind sehr schnell und selten.
+			- Aber warum benötigt die auf G angewandte Potenzmethode nur etwa 50 Iterationen, um zu konvergieren?
+				-  Die Antwort ergibt sich aus der Theorie der Markov-Ketten. Im Allgemeinen hängt die asymptotische Konvergenzrate der auf eine Matrix angewandten Potenzmethode vom Verhältnis der beiden größten Eigenwerte ab, die mit λ1 und λ2 bezeichnet werden. 
+				- Genauer gesagt ist die asymptotische Konvergenzrate die Rate, bei der  ![[Pasted image 20231115203400.png]] Für stochastische Matrizen wie G ist λ1 = 1, so dass |λ2 | die Konvergenz bestimmt.
+				- Da G ebenfalls primitiv ist, ist ![[Pasted image 20231115203434.png]] 
+				- Im Allgemeinen erfordert die numerische Bestimmung von λ2 für eine Matrix einen Rechenaufwand, den man nicht aufwenden möchte, nur um eine Schätzung der asymptotischen Konvergenzrate zu erhalten. Glücklicherweise ist es für das PageRank-Problem einfach zu zeigen, dass, wenn die jeweiligen Spektren ![[Pasted image 20231115203534.png]] gilt ![[Pasted image 20231115203551.png]]
+				- Außerdem ist es aufgrund der Linkstruktur des Webs sehr wahrscheinlich, dass ![[Pasted image 20231115203611.png]] oder zumindest ungefähr 1 was bedeutet, dass ![[Pasted image 20231115203635.png]] ist.
+				- Folglich erklärt der konvexe Kombinationsparameter α die berichtete Konvergenz nach nur 50 Iterationen. In ihren Papieren verwenden die Google-Gründer Brin und Page α = .85, und beim letzten Bericht ist dies immer noch der von Google verwendete Wert. α50 = .8550 ≈ .000296, was bedeutet, dass man bei der 50. Iteration eine Genauigkeit von etwa 2-3 Stellen im ungefähren PageRank-Vektor erwarten kann.
+	- Wir können nun also positive Festhalten, dass:
+		- mit den Anpassungen der Stochastizität und der Primitivität, die auf G angewandte Potenzmethode garantiert zu einem einzigen positiven Vektor  konvergiert, dem PageRank-Vektor, unabhängig vom Startvektor.
+		- Der resultierende PageRank-Vektor positiv ist, und es dadurch keine unerwünschten Gleichstände bei 0 mehr gibt. 
+		- Außerdem müssen um PageRank-Werte mit einer Genauigkeit von ungefähr τ Stellen zu erzeugen, nur -τ /log10 α Iterationen  abgeschlossen werden.
+		- ==Das sollten wir wahrscheinlich mit Bildern in der PowerPoint erklären. Also die Unterschiede die entstehen würden, wenn man das mit anderen Mehtoden versuchen würde==
+		- ==Wenn Zeit über, dann über "Wie verdienen Suchmachinen ihr Geld" oder Suchmaschinen-Optimierung reden==
+
+
+
 - 4.7 THEOREM AND PROOF FOR SPECTRUM OF THE GOOGLE MATRIX
 	- Verstehen und Erklären können, vielleicht nicht im Detail, aber die Grundidee bzw. Strategie
+	- ==Oder wir zeigen das nur so wie "hey, falls du daran interessiert bist, hier der Beweis."==
+	- ![[Pasted image 20231115204609.png]]
+ 
 
 ## Vortrag Gliederung (Erste Ideen)
+==4.5 und 4.6 sollten wir wahrscheinlich am meisten Zeit widmen==
 1. Einstieg mit dem Quote von 1. Seite Kapitel 14
+	1. ==Wir könnten auch Versuchen den Vortrag anhand der 6 Fragen aus 4.3 zu gestalten um die Leute mit den Fragen vielleicht bisschen am Ball zu halten==
 2. Grober Überblick welches Problem PageRank löst und warum die Erfinder es brauchten. Anschließend noch wofür andere PageRank Modell nutzen, maybe auch mit anderer Verwendung als Google es hat.
 3. Erklärung PageRank erst in Worten, an Beispiel mit 4 Bekannten Websites und einem erklärenden Graphen dazu. Simpler Einstieg
 4. Von Ausgangsformel des Pageranks aufbauend anfangen und dann bis heutigen Pagerank und zwischendurch die mathematischen Erklärungen, wie Markov Chain, einstreuen.

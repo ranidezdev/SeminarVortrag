@@ -4,44 +4,15 @@
     "type": "split",
     "children": [
       {
-        "id": "c6f139fe94631ce3",
+        "id": "a9a79e95fd9d3a80",
         "type": "tabs",
         "children": [
           {
-            "id": "a34a74a4aa55779e",
+            "id": "f2843cb3bcb848df",
             "type": "leaf",
             "state": {
-              "type": "pdf",
-              "state": {
-                "file": "Langville und Meyer, Google’s Pagerank and Beyond The Science of Search Engine Rankings.pdf"
-              }
-            }
-          },
-          {
-            "id": "1916589aa94ebfb2",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "Ausschnitt aus Langville und Meyer, Google’s Pagerank and Beyond The Science of Search Engine Rankings.pdf"
-              }
-            }
-          }
-        ],
-        "currentTab": 1
-      },
-      {
-        "id": "40d3483af3a77da0",
-        "type": "tabs",
-        "children": [
-          {
-            "id": "105d2fa20a014ea0",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "Ausschnitt aus Langville und Meyer, Google’s Pagerank and Beyond The Science of Search Engine Rankings.pdf"
-              }
+              "type": "empty",
+              "state": {}
             }
           }
         ]
@@ -110,7 +81,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Ausschnitt aus Langville und Meyer, Google’s Pagerank and Beyond The Science of Search Engine Rankings.pdf",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -127,7 +97,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Ausschnitt aus Langville und Meyer, Google’s Pagerank and Beyond The Science of Search Engine Rankings.pdf",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -149,9 +118,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "Ausschnitt aus Langville und Meyer, Google’s Pagerank and Beyond The Science of Search Engine Rankings.pdf"
-              }
+              "state": {}
             }
           }
         ]
@@ -171,24 +138,24 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "1916589aa94ebfb2",
+  "active": "f2843cb3bcb848df",
   "lastOpenFiles": [
-    "Langville und Meyer, Google’s Pagerank and Beyond The Science of Search Engine Rankings.pdf",
-    "Ausschnitt aus Langville und Meyer, Google’s Pagerank and Beyond The Science of Search Engine Rankings.pdf",
     "Seminarvortrag PageRank.md",
     "Tobis Pagerank Ausarbeitung.md",
-    "Ausschnitt aus Langville und Meyer, Google’s Pagerank and Beyond The Science of Search Engine Rankings.pdf.md",
+    "Ausschnitt aus Langville und Meyer, Google’s Pagerank and Beyond The Science of Search Engine Rankings.pdf",
+    "Pasted image 20231115204609.png",
+    "SeminarVortrag/Screenshots/Pasted image 20231115204456.png",
     "Übersetzter Ausschnitt aus Langville und Meyer, Google’s Pagerank and Beyond The Science of Search Engine Rankings-de.pdf",
-    "SeminarVortrag/Screenshots/Pasted image 20231113171738.png",
-    "SeminarVortrag/Screenshots/Pasted image 20231113171708.png",
-    "SeminarVortrag/Screenshots/Pasted image 20231113171056.png",
-    "SeminarVortrag/Screenshots/Pasted image 20231113163139.png",
-    "SeminarVortrag/Screenshots/Pasted image 20231113113955.png",
-    "Pasted image 20231113171708.png",
-    "Pasted image 20231113171738.png",
-    "Pasted image 20231113171056.png",
-    "Pasted image 20231113163139.png",
-    "SeminarVortrag/Screenshots/Pasted image 20231113143445.png",
+    "SeminarVortrag/Screenshots/Pasted image 20231115203635.png",
+    "SeminarVortrag/Screenshots/Pasted image 20231115203611.png",
+    "SeminarVortrag/Screenshots/Pasted image 20231115203551.png",
+    "SeminarVortrag/Screenshots/Pasted image 20231115203534.png",
+    "SeminarVortrag/Screenshots/Pasted image 20231115203434.png",
+    "SeminarVortrag/Screenshots/Pasted image 20231115203400.png",
+    "SeminarVortrag/Screenshots/Pasted image 20231115202114.png",
+    "SeminarVortrag/Screenshots/Pasted image 20231115195203.png",
+    "Langville und Meyer, Google’s Pagerank and Beyond The Science of Search Engine Rankings.pdf",
+    "Ausschnitt aus Langville und Meyer, Google’s Pagerank and Beyond The Science of Search Engine Rankings.pdf.md",
     "SeminarVortrag/Screenshots/Pasted image 20231113113955.png.md",
     "SeminarVortrag/Screenshots",
     "SeminarVortrag"
