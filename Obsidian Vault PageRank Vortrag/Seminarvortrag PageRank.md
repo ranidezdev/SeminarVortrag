@@ -8,6 +8,10 @@
 
 ## Tobi-Notizen
 
+==Habe mit DeepL mal ein Teil des Dokumentes übersetzt und das mit in die Repo getan==
+==Schau mal in "Tobis Pagerank Ausarbeitung", wenn du meinen Stand sehen willst==
+==Ich mache morgen vermutlich weiter damit den Text in "Vortrag Style"  zu übersetzen und an der Struktur zu arbeiten ==
+==Was hältst du von meinen Anmerkungen bei 4.6 und ganz unten bei Vortrag Gliederung (Erste Ideen)?==
 
 
 ## Paul-Notizen
