@@ -160,7 +160,9 @@
 		- Ihr habt mir das vermutlich alle direkt geglaubt, aber die Potenzmethode ist eigentlich für ihre Langsamkeit beim finden von stationären Vektoren im Vergleich zu Gauß-Seidel, Jacobi, etc. bekannt.
 		- Also was hat Brin und Page damals dazu gebracht, trotzdem diese Methode zu wählen?
 			- Erstens die Einfachheit der Methode. Die Implementierung und Programmierung ist sehr unkompliziert.
-			- Doch ein weitaus größerer Vorteil für ihr Vorhaben ist, dass sich die Matrix G durch die angewandte Potenzmethode (Gleichung (4.5.1)) tatsächlich in Form des sehr dünn besetzten H ausgedrückt werden.
+			- Doch ein weitaus größerer Vorteil für ihr Vorhaben ist, dass sich die Matrix G durch die angewandte Potenzmethode (
+			- Gleichung (4.5.1) ![[Pasted image 20240130214956.png]]
+			- ) tatsächlich in Form des sehr dünn besetzten H ausgedrückt werden kann.
 			  ![[Pasted image 20231115202114.png]]
 			-  Die Vektor-Matrix-Multiplikationen (π^((k)T) H) werden mit dem extrem dünn besetzten H durchgeführt, und S und G werden nie gebildet oder gespeichert, sondern nur ihre Rang- Eins-Komponenten, a und e, werden benötigt.
 			- Es sei daran erinnert, dass jede Vektor- Matrix-Multiplikation O(n) ist, da H etwa 10 Nullen pro Zeile hat. Dies ist wahrscheinlich der Hauptgrund dafür, dass Brin und Page im Jahr 1998 die Potenzmethode verwendeten.
@@ -197,7 +199,6 @@
 
 - 4.7 THEOREM AND PROOF FOR SPECTRUM OF THE GOOGLE MATRIX
 	- Verstehen und Erklären können, vielleicht nicht im Detail, aber die Grundidee bzw. Strategie
-	- ==Oder wir zeigen das nur so wie "hey, falls du daran interessiert bist, hier der Beweis."==
 	- ![[Pasted image 20231115204609.png]]
  
 

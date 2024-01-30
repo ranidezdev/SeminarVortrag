@@ -11,8 +11,10 @@
             "id": "f2843cb3bcb848df",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "image",
+              "state": {
+                "file": "Pasted image 20240130214956.png"
+              }
             }
           }
         ]
@@ -65,7 +67,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 200
   },
   "right": {
     "id": "ecf5b9aa47187be5",
@@ -81,6 +83,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "Pasted image 20240130214956.png",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -97,6 +100,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "Pasted image 20240130214956.png",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -118,7 +122,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "Pasted image 20240130214956.png"
+              }
             }
           }
         ]
@@ -138,24 +144,123 @@
       "command-palette:Open command palette": false
     }
   },
+  "floating": {
+    "id": "da219f73bebfba85",
+    "type": "floating",
+    "children": [
+      {
+        "id": "93a826519c3d4a34",
+        "type": "window",
+        "children": [
+          {
+            "id": "223fa303b2cab285",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "d002f296c02e8eea",
+                "type": "leaf",
+                "state": {
+                  "type": "markdown",
+                  "state": {
+                    "file": "Tobis Pagerank Ausarbeitung.md",
+                    "mode": "source",
+                    "source": false
+                  }
+                }
+              }
+            ]
+          }
+        ],
+        "direction": "vertical",
+        "x": 993,
+        "y": 0,
+        "width": 927,
+        "height": 1040,
+        "maximize": false,
+        "zoom": 0
+      },
+      {
+        "id": "fe17e0fe75624337",
+        "type": "window",
+        "children": [
+          {
+            "id": "bc4d4b3d0208716d",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "4e6ce99d4ad1d999",
+                "type": "leaf",
+                "state": {
+                  "type": "markdown",
+                  "state": {
+                    "file": "Vortragsnotizen.md",
+                    "mode": "source",
+                    "source": false
+                  }
+                }
+              }
+            ]
+          }
+        ],
+        "direction": "vertical",
+        "x": 1920,
+        "y": 0,
+        "width": 960,
+        "height": 1040,
+        "maximize": false,
+        "zoom": 0
+      },
+      {
+        "id": "7d183cb25c32e6ed",
+        "type": "window",
+        "children": [
+          {
+            "id": "22aa8b3bc3986287",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "c493332998d88c4b",
+                "type": "leaf",
+                "state": {
+                  "type": "pdf",
+                  "state": {
+                    "file": "Ausschnitt aus Langville und Meyer, Google’s Pagerank and Beyond The Science of Search Engine Rankings.pdf"
+                  }
+                }
+              }
+            ]
+          }
+        ],
+        "direction": "vertical",
+        "x": 2880,
+        "y": 0,
+        "width": 960,
+        "height": 1040,
+        "maximize": false,
+        "zoom": 0
+      }
+    ]
+  },
   "active": "f2843cb3bcb848df",
   "lastOpenFiles": [
-    "Seminarvortrag PageRank.md",
+    "Pasted image 20240130215258.png",
+    "Pasted image 20231115204609.png",
+    "Pasted image 20240130214956.png",
+    "Übersetzter Ausschnitt aus Langville und Meyer, Google’s Pagerank and Beyond The Science of Search Engine Rankings-de.pdf",
+    "Vortragsnotizen.md",
     "Tobis Pagerank Ausarbeitung.md",
     "Ausschnitt aus Langville und Meyer, Google’s Pagerank and Beyond The Science of Search Engine Rankings.pdf",
-    "Pasted image 20231115204609.png",
+    "Ausschnitt aus Langville und Meyer, Google’s Pagerank and Beyond The Science of Search Engine Rankings.pdf.md",
+    "Seminarvortrag PageRank.md",
+    "Untitled",
     "SeminarVortrag/Screenshots/Pasted image 20231115204456.png",
-    "Übersetzter Ausschnitt aus Langville und Meyer, Google’s Pagerank and Beyond The Science of Search Engine Rankings-de.pdf",
     "SeminarVortrag/Screenshots/Pasted image 20231115203635.png",
     "SeminarVortrag/Screenshots/Pasted image 20231115203611.png",
     "SeminarVortrag/Screenshots/Pasted image 20231115203551.png",
     "SeminarVortrag/Screenshots/Pasted image 20231115203534.png",
     "SeminarVortrag/Screenshots/Pasted image 20231115203434.png",
     "SeminarVortrag/Screenshots/Pasted image 20231115203400.png",
-    "SeminarVortrag/Screenshots/Pasted image 20231115202114.png",
-    "SeminarVortrag/Screenshots/Pasted image 20231115195203.png",
     "Langville und Meyer, Google’s Pagerank and Beyond The Science of Search Engine Rankings.pdf",
-    "Ausschnitt aus Langville und Meyer, Google’s Pagerank and Beyond The Science of Search Engine Rankings.pdf.md",
     "SeminarVortrag/Screenshots/Pasted image 20231113113955.png.md",
     "SeminarVortrag/Screenshots",
     "SeminarVortrag"
